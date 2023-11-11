@@ -1,10 +1,8 @@
-import { withClerkMiddleware} from "@clerk/nextjs";
-import {type NextRequest, NextResponse} from "next/server";
+import {withClerkMiddleware} from "@clerk/nextjs";
+import {NextResponse} from "next/server";
 
-// export default authMiddleware({});
-
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-export default withClerkMiddleware((req: NextRequest) => {
+export default withClerkMiddleware(() => {
+    console.log("Auth middleware running ");
     return NextResponse.next();
 });
 
